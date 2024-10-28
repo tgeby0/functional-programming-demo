@@ -221,7 +221,7 @@ One helpful trick is using guards, which let you pattern match based off of a pr
 maxValue :: Int -> Int -> Int
 maxValue a b
     | a < b = b
-    | otherwise = b
+    | otherwise = a
 ```
 
 Now, you should have enough knowledge to implement your `merge` function. Good luck!
