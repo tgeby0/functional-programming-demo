@@ -15,6 +15,10 @@ Pre-made Files
 
 ## Haskell Tutorial
 
+Here are a few tutorial websites to help you out: 
+* https://www.schoolofhaskell.com/school/starting-with-haskell/introduction-to-haskell/1-haskell-basics
+* https://www.tutorialspoint.com/haskell/haskell_overview.htm
+
 First, let's try writing some basic Haskell code. Run `ghci` in your terminal, then enter the following code:
 
 ```hs
