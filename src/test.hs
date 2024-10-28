@@ -1,0 +1,2 @@
+-- Feel free to experiment with Haskell in this file!
+-- This will not affect your assignment's grade
