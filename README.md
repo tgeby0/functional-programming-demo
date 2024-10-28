@@ -120,3 +120,33 @@ callOrDefault _ defaultValue Nothing = defaultValue
 
 The code path taken depends on what type `Maybe` is. This is also an example of a higher-order function, as it takes a function as a parameter. Feel free to check out more functions for `Maybe` at https://hackage.haskell.org/package/base-4.20.0.1/docs/Data-Maybe.html.
 
+## Writing your own Haskell
+
+There are several Python functions you will be tasked with converting into Haskell.
+
+### printAMessage
+
+This function just prints a value to the screen.
+
+```py
+def printAMessage(x):
+    print(x)
+```
+
+For Haskell, it will have this type: `printAMessage :: Show a => a -> IO ()`. This means that it takes any value which can be converted to a string, and executes an IO side-effect.
+
+Try writing your own version of the Python function in `main.hs`.
+
+### division
+
+This function divides 2 numbers, returning None if the denominator is 0.
+
+```py
+def division(x,y):
+    if x == y:
+        return None
+    else:
+        return x/y
+```
+
+In Haskell, it is generally preferred to always return something from a function. In this case, you will want your function to return a `Maybe` value. The type of your function will probably look like `division :: Double -> Double -> Maybe Double`.
