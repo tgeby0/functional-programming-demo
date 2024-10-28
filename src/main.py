@@ -27,6 +27,28 @@ def factList(n):
         j += 1
     return factorial_list
 
+def merge(ls1, ls2):
+    result = []
+    i = 0
+    j = 0
+    
+    while i < len(ls1) and j < len(ls2):
+        if ls1[i] <= ls2[j]:
+            result.append(ls1[i])
+            i += 1
+        else:
+            result.append(ls2[j])
+            j += 1
+            
+    while i < len(ls1):
+        result.append(ls1[i])
+        i += 1
+        
+    while j < len(ls2):
+        result.append(ls2[j])
+        j += 1
+        
+    return result
 
 
 if __name__ == "__main__":
@@ -50,3 +72,7 @@ if __name__ == "__main__":
     print("\nTesting factList: \n")
     testList = factList(5)
     print(f"testList: {testList}\n")
+    
+    print("\nTesting merge: \n")
+    merged = merge([1, 3, 6], [2, 4, 5, 6, 7])
+    print(f"merge: {merged}\n")
