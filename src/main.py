@@ -6,13 +6,13 @@ def printAMessage(x):
 
 def division(x,y):
     if x == y:
-        return 0
+        return None
     else:
         return x/y
     
 def factorial(n):
     if n == 1 or n == 0:
-        return n
+        return 1
     else:
         number = 1
         for i in range(2, n+1):
