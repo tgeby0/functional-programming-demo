@@ -13,3 +13,11 @@ Pre-made Files
 * `main.hs`: This blank file is where you'll complete all your Haskell tasks
 
 ## Haskell Tutorial
+
+First, let's try writing a basic program. Open `main.hs`, and type in the following code:
+
+```hs
+main = print "Hello, world!"
+```
+
+Then run this using `runghc src/main.hs`. It should print "Hello, world!" to the terminal.
