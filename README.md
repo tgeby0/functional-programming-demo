@@ -71,3 +71,30 @@ Recursive functions have a base case and one or more inductive cases. They call 
 The type hints are very important, so that the compiler knows what type and number of parameters the function will use. The actual function uses pattern matching, which chooses code to execute based on the values of the parameters. 
 
 The base case is 0, as the sum of the numbers from 1 to 0 is 0. The inductive case then builds off of that to produce the final answer. The programmer does not need to manage the details of how this is calculated, they can just enter the definition of the function and Haskell will do the rest.
+
+### Lists
+
+Lists are the main data structure used in Haskell. Unlike Python's lists, these lists are actually linked lists. This makes writing some types of functions more convenient, but isn't great for indexing the middle of a list.
+
+You can create a list using square brackets, like in Python. However, all values in the list must have the same type. You can also use the `:` operator to add an item to the beginning of the list. For example: `3 : [4, 5]` produces `[3, 4, 5]`.
+
+You can also use pattern matching to work with lists, here is an example:
+
+```hs
+-- Adds together the values taken to the given power of each number in the list.
+sumPowers :: Int -> [Int] -> Int
+sumPowers _ [] = 0
+sumPowers power (x : xs) = (x ^ power) + sumPowers power xs
+```
+
+When a Haskell function has multiple parameters, the type is written as such. You can pattern match with both parameters, and use `_` as a wildcard to represent any possible value when you don't need that parameter for the calculation. In this case, the first pattern matches any combination of parameters with an empty list, while the second pattern matches any combination where the list has at least one element.
+
+Interestingly, you don't actually need to provide all parameters to a function. If you just provide a single parameter, such as `sumPowers 2`, it returns a function that you can call with the remaining parameters. This is called partial application.
+
+```hs
+sumPowers2 = sumPowers 2
+sumPowers3 = sumPowers 3
+
+sum1 = sumPowers2 [1, 2, 3, 4] -- 30
+sum2 = sumPowers3 [1, 2, 3, 4] -- 100
+```
