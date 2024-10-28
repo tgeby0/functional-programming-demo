@@ -1,6 +1,6 @@
 # Functional Programming Demo
 
-For this tutorial, you will be converting an object-oriented program into a functional program using Haskell. 
+For this tutorial, you will be converting an imperative program into a functional program using Haskell. 
 
 ### Pre-Requisites
 
