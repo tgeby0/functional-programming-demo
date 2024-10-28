@@ -14,10 +14,10 @@ Pre-made Files
 
 ## Haskell Tutorial
 
-First, let's try writing a basic program. Open `main.hs`, and type in the following code:
+First, let's try writing some basic Haskell. Run `ghci` in your terminal, then enter the following code:
 
 ```hs
-main = print "Hello, world!"
+print "Hello, world!"
 ```
 
-Then run this using `runghc src/main.hs`. It should print "Hello, world!" to the terminal.
+This should print "Hello, world!" in the console.
