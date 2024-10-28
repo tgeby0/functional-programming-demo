@@ -99,6 +99,8 @@ sum1 = sumPowers2 [1, 2, 3, 4] -- 30
 sum2 = sumPowers3 [1, 2, 3, 4] -- 100
 ```
 
+There are plenty of useful functions for lists, such as `map`, `filter`, `sum`, and `foldr`. Feel free to check out these functions at https://hackage.haskell.org/package/base-4.20.0.1/docs/Data-List.html. 
+
 ### Data Types
 
 Haskell contains many different data types, and also allows you to define your own. For example, the `Maybe` type is useful for defining a value which may or may not exist. The definition looks like this:
@@ -116,4 +118,5 @@ callOrDefault fn _ (Just x) = fn x
 callOrDefault _ defaultValue Nothing = defaultValue
 ```
 
-The code path taken depends on what type Maybe is. This is also an example of a higher-order function, as it takes a function as a parameter. 
+The code path taken depends on what type `Maybe` is. This is also an example of a higher-order function, as it takes a function as a parameter. Feel free to check out more functions for `Maybe` at https://hackage.haskell.org/package/base-4.20.0.1/docs/Data-Maybe.html.
+
