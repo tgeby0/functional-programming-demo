@@ -150,3 +150,78 @@ def division(x,y):
 ```
 
 In Haskell, it is generally preferred to always return something from a function. In this case, you will want your function to return a `Maybe` value. The type of your function will probably look like `division :: Double -> Double -> Maybe Double`.
+
+### factorial
+
+This function returns the factorial of a number, meaning the value attained from multiplying every number from 1 to itself.
+
+```py
+def factorial(n):
+    if n == 1 or n == 0:
+        return 1
+    else:
+        number = 1
+        for i in range(2, n+1):
+            number *= i
+        return number
+```
+
+For Haskell, it will have this type: `factorial :: Int -> Int`. There are several ways to implement this in a functional manner, it's up to you!
+
+### factList
+
+This function returns the first `n` factorial numbers.
+
+```py
+def factList(n):
+    factorial_list = [None] * n
+    j = 0
+    for i in range(1, n+1):
+        factorial_list[j] = factorial(i)
+        j += 1
+    return factorial_list
+```
+
+For Haskell, it will have this type: `factList :: Int -> [Int]`. You can create ranges with the syntax `[1..n]`.
+
+### merge
+
+This function merges two pre-sorted lists to create a sorted list containing all of the values from both lists. This type of function would be used to implement MergeSort.
+
+```py
+def merge(ls1, ls2):
+    result = []
+    i = 0
+    j = 0
+    
+    while i < len(ls1) and j < len(ls2):
+        if ls1[i] <= ls2[j]:
+            result.append(ls1[i])
+            i += 1
+        else:
+            result.append(ls2[j])
+            j += 1
+            
+    while i < len(ls1):
+        result.append(ls1[i])
+        i += 1
+        
+    while j < len(ls2):
+        result.append(ls2[j])
+        j += 1
+        
+    return result
+```
+
+For Haskell, it will have this type: `merge :: [Int] -> [Int] -> [Int]`. Pattern matching and recursion are definitely recommended here!
+
+One helpful trick is using guards, which let you pattern match based off of a predicate. For example, this code determines which of 2 integers is larger. If you want to learn more, check out https://www.futurelearn.com/info/courses/functional-programming-haskell/0/steps/27226.
+
+```hs
+maxValue :: Int -> Int -> Int
+maxValue a b
+    | a < b = b
+    | otherwise = b
+```
+
+Now, you should have enough knowledge to implement your `merge` function. Good luck!
