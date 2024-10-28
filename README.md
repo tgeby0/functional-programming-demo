@@ -55,7 +55,7 @@ This code uses mutable variables, but this is impossible in Haskell, so how woul
 
 The answer is recursion. Recursive functions are key to Haskell, as they allow you to implement functions that depend on previous variables without having to mutate them.
 
-Go into `main.hs` and type in the following code, then run it using `runghc src/main.hs`.
+Go into `test.hs` and type in the following code, then run it using `runghc src/test.hs`.
 
 ```hs
 addNums :: Int -> Int
