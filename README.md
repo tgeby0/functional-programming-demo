@@ -89,7 +89,7 @@ sumPowers power (x : xs) = (x ^ power) + sumPowers power xs
 
 When a Haskell function has multiple parameters, the type is written as such. You can pattern match with both parameters, and use `_` as a wildcard to represent any possible value when you don't need that parameter for the calculation. In this case, the first pattern matches any combination of parameters with an empty list, while the second pattern matches any combination where the list has at least one element.
 
-Interestingly, you don't actually need to provide all parameters to a function. If you just provide a single parameter, such as `sumPowers 2`, it returns a function that you can call with the remaining parameters. This is called partial application.
+Interestingly, you don't actually need to provide all parameters to a function. If you just provide a single parameter, such as `sumPowers 2`, it returns a function that you can call with the remaining parameters. This is called partial application. Generally you want to order parameters such that the parameters that change the least go first, as this makes partial application easier.
 
 ```hs
 sumPowers2 = sumPowers 2
@@ -98,3 +98,22 @@ sumPowers3 = sumPowers 3
 sum1 = sumPowers2 [1, 2, 3, 4] -- 30
 sum2 = sumPowers3 [1, 2, 3, 4] -- 100
 ```
+
+### Data Types
+
+Haskell contains many different data types, and also allows you to define your own. For example, the `Maybe` type is useful for defining a value which may or may not exist. The definition looks like this:
+
+```hs
+data Maybe a = Just a | Nothing
+```
+
+You can then create an instance of this `Maybe` type using `Just` with a value, or `Nothing`. You can also pattern match with data types. Here is an example:
+
+```hs
+-- Calls a function on a Maybe value if it exists, returning the result, or returns a default value otherwise
+callOrDefault :: (a -> b) -> b -> Maybe a -> b
+callOrDefault fn _ (Just x) = fn x
+callOrDefault _ defaultValue Nothing = defaultValue
+```
+
+The code path taken depends on what type Maybe is. This is also an example of a higher-order function, as it takes a function as a parameter. 
